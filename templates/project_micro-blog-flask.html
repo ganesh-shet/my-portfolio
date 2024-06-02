@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="main main--project">
+        <div>
+            <img
+                class="hero"
+                src="{{ url_for('static', filename=project['hero']) }}"
+                alt="Micro Blog"
+            />
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project['name'] }}</h2>
+
+                    <p>
+                        Hi, I'm Ganesh! In this I have built a microblog.
+                        Microblog is written entirely with Flask and a handful of extensions, and has many features you would expect in a current-day web app.
+                    </p>
+                    <p>
+                        Summary: Microblog / Ragtime Example Project Architecture
+                        Microblog has many nice features that you're going to take advantage of including working with databases, authentication, email and more.
+                        Please clone the Microblog source code and explore the files and folders within.
+                    </p>
+                </article>
+
+                <section>
+                    <article class="project__meta-group">
+                        <h3 class="project__heading project__heading--meta">Technologies used</h3>
+
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">Flask</li>
+                            <li class="technology-list__item">HTML</li>
+                            <li class="technology-list__item">CSS</li>
+                        </ul>
+                    </article>
+                    <h3 class="project__heading project__heading--meta--cta">Source Code</h3>
+                    <a class="cta" href="{{ project['source-code'] }}">
+                        <img class="cta__icon" src="{{ url_for('static', filename='img/git.png') }}">
+                        View in Github
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+{% endblock %}
